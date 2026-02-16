@@ -25,7 +25,7 @@ StartupEvents.registry("item", (event) => {
       .rarity("uncommon")
       .translationKey(`item.kubejs.${id}_coin`)
       .tooltip(Text.translate("item.kubejs.coin.tooltip"))
-      .tagItem("kubejs:coins");
+      .tag("kubejs:coins");
 
     // 2. 만약 아이디가 'energy'라면 반짝임(Glow) 효과를 켠다
     if (id === "energy") {
@@ -37,7 +37,7 @@ StartupEvents.registry("item", (event) => {
     .create("tanned_leather")
     .translationKey("item.kubejs.tanned_leather")
     .maxStackSize(64)
-    .tagItem("forge:leather");
+    .tag("forge:leather");
     
   event
     .create("bound_leather")

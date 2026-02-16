@@ -142,31 +142,22 @@
 				"대신 &7자갈 3개&r를 희생해 &b부싯돌 하나&r를 만들 수 있습니다."
 				"&7&o초반에만 조금 힘들 뿐입니다. 진정하세요.&r"
 				""
-				"&7자갈 9개&r를 가져와 &7부싯돌 3개&r를 만드세요. &7부싯돌&r을 하나 더 드리겠습니다."
+				"&7자갈 9개&r를 가져오세요. &7횃불&r을 하나 드리겠습니다."
 			]
 			icon: "minecraft:gravel"
 			id: "7D7E53FD92B00E76"
 			rewards: [{
-				id: "1AC27C002DBA67D9"
-				item: "minecraft:flint"
+				id: "60CAF478984C3B5C"
+				item: "minecraft:torch"
 				type: "item"
 			}]
 			subtitle: "물론 바위로 자갈을 만드는 건 나중에나 가능하죠"
-			tasks: [
-				{
-					count: 9L
-					id: "24AD0CD95F5E40AC"
-					item: { Count: 9, id: "minecraft:gravel" }
-					type: "item"
-				}
-				{
-					count: 3L
-					id: "1EB5EB756AA63E74"
-					item: "minecraft:flint"
-					only_from_crafting: true
-					type: "item"
-				}
-			]
+			tasks: [{
+				count: 9L
+				id: "24AD0CD95F5E40AC"
+				item: { Count: 9, id: "minecraft:gravel" }
+				type: "item"
+			}]
 			title: "바윗돌 깨뜨려 자갈돌"
 			x: -4.0d
 			y: 0.0d
@@ -203,24 +194,26 @@
 				}
 			}
 			id: "2BE8342EB862519A"
-			rewards: [{
-				id: "10D6EFFDCB77A557"
-				item: {
-					Count: 1
-					id: "gtceu:flint_mortar"
-					tag: {
-						Damage: 54
-						GT.Behaviours: { }
-						GT.Tool: {
-							AttackDamage: 0.0f
-							AttackSpeed: -2.4f
-							DefaultEnchantments: [ ]
-							MaxDamage: 64
-						}
-					}
+			rewards: [
+				{
+					count: 10
+					id: "3E487267DCB40B56"
+					item: "minecraft:oak_planks"
+					type: "item"
 				}
-				type: "item"
-			}]
+				{
+					count: 5
+					id: "17EBB2F1A6CFEDF9"
+					item: "kubejs:technician_coin"
+					type: "item"
+				}
+				{
+					count: 5
+					id: "03C2FB9ECC4F4B05"
+					item: "kubejs:miner_coin"
+					type: "item"
+				}
+			]
 			subtitle: "드디어 나무를 구할 수 있어"
 			tasks: [
 				{
@@ -241,6 +234,7 @@
 							HideFlags: 2
 						}
 					}
+					only_from_crafting: false
 					type: "item"
 				}
 				{
@@ -263,6 +257,7 @@
 							HideFlags: 2
 						}
 					}
+					only_from_crafting: false
 					type: "item"
 				}
 				{
@@ -286,6 +281,7 @@
 							HideFlags: 2
 						}
 					}
+					only_from_crafting: false
 					type: "item"
 				}
 				{
@@ -304,11 +300,12 @@
 							HideFlags: 2
 						}
 					}
+					only_from_crafting: false
 					type: "item"
 				}
 			]
 			title: "부싯돌 도구"
-			x: 0.0d
+			x: 2.0d
 			y: 0.0d
 		}
 		{
@@ -338,44 +335,6 @@
 			title: "중요한 체력 관리"
 			x: -5.0d
 			y: 1.5d
-		}
-		{
-			description: [
-				"&dE&aM&bI&r를 배워봅시다!"
-				""
-				"[\"\\u00a72JEI\\u00a7r와 비슷하지만 좀 다릅니다. \\u00a7dE\\u00a7aM\\u00a7bI\\u00a7r 설정을 열어보시면 아시겠지만, 개발자가 만들어 둔 \",{\"translate\":\"screen.emi.presets\",\"color\":\"blue\"},\"이 있습니다.\"]"
-				""
-				"[\"\",{\"translate\":\"screen.emi.presets\",\"color\":\"blue\"},\" 중 \",{\"translate\":\"config.emi.presets.recipe_book_plus\",\"color\":\"green\"},\"를 적용하면 왼쪽 메뉴가 \",{\"translate\":\"emi.sidebar.type.craftables\",\"color\":\"yellow\"},\"과 \",{\"translate\":\"emi.sidebar.type.favorites\",\"color\":\"gold\"},\"(으)로 나뉩니다.\"]"
-				""
-				"&b아이콘&r을 누르는 것으로 &a변경할 수 있으며&r, &e제작 가능한 아이템 목록&r이 보이는 덕에 &o아주 빠른 제작&r이 가능해집니다!"
-				""
-				"[\"게다가, \",{\"translate\":\"key.keyboard.left.control\",\"color\":\"green\"},\" + \",{\"translate\":\"key.mouse.left\",\"color\":\"yellow\"},\"으로 아이템을 빠르게 제작할 수 있습니다!\"]"
-				""
-				"[\"\",{\"translate\":\"key.keyboard.left.control\",\"color\":\"green\"},\" + \",{\"translate\":\"key.keyboard.left.shift\",\"color\":\"aqua\"},\" + \",{\"translate\":\"key.mouse.left\",\"color\":\"yellow\"},\"으로 한 묶음씩 제작할 수도 있습니다!\"]"
-				""
-				"[\"\\u00a77다음 페이지\\u00a7r에서 \\u00a7dE\\u00a7aM\\u00a7bI\\u00a7r의 꽃, \",{\"translate\":\"tooltip.emi.recipe_tree\",\"color\":\"green\"},\"를 강의해 드리겠습니다!\"]"
-				"{@pagebreak}"
-				"[\"이번 페이지에서는 \",{\"translate\":\"tooltip.emi.recipe_tree\",\"color\":\"green\"},\"를 다룹니다.\"]"
-			]
-			icon: {
-				Count: 1
-				id: "ftbquests:custom_icon"
-				tag: {
-					Icon: "kubejs:textures/gui/emi.png"
-				}
-			}
-			id: "2B4787DC8FB5ACC8"
-			optional: true
-			shape: "rsquare"
-			subtitle: "이거만큼 편한 게 없는데 아직도 &2JEI&r를 고집하시나요?"
-			tasks: [{
-				id: "30D7784B07D2E948"
-				title: "확인"
-				type: "checkmark"
-			}]
-			title: "&dE&aM&bI&r와 함께 하는 편리한 제작 생활"
-			x: -9.5d
-			y: 4.5d
 		}
 		{
 			dependencies: ["2EE923F7CC700F45"]
@@ -530,6 +489,7 @@
 			]
 			icon: "minecraft:white_wool"
 			id: "2CE35B78DF8DB1AF"
+			incompatible: ["4C96166F478A46D8"]
 			rewards: [
 				{
 					id: "0DC800CE9C05884F"
@@ -537,9 +497,9 @@
 					type: "item"
 				}
 				{
-					count: 2
-					id: "49844EE2295BBAC3"
-					item: "kubejs:farmer_coin"
+					count: 5
+					id: "162851964650B4FD"
+					item: "kubejs:survivor_coin"
 					type: "item"
 				}
 			]
@@ -558,20 +518,30 @@
 				type: "item"
 			}]
 			title: "양털 구하기"
-			x: 0.5d
-			y: 5.0d
+			x: 2.5d
+			y: 3.5d
 		}
 		{
-			dependencies: [
-				"7D7E53FD92B00E76"
-				"181E99CC5F4A208B"
-			]
+			dependencies: ["02FF9105416FC255"]
 			description: [
-				"나무 2개와 부싯돌 2개만 있으면 제작대를 만들 수 있습니다."
+				"&7나무 2개&r와 &7부싯돌 2개&r만 있으면 &b제작대&r를 만들 수 있습니다. 이제 &33x3 조합&r이 가능하네요!"
 				""
-				"이제 3x3 조합이 가능하네요!"
+				"&7민들레 차&r도 마셔보세요! &d편안한&r 느낌을 줍니다."
 			]
 			id: "354EFDB631A14157"
+			rewards: [
+				{
+					id: "56623A47225A03B4"
+					item: "farmersrespite:dandelion_tea"
+					type: "item"
+				}
+				{
+					count: 5
+					id: "72F960A3AB0F0364"
+					item: "kubejs:technician_coin"
+					type: "item"
+				}
+			]
 			subtitle: "나는 이 제작대로 세계를 정복했다"
 			tasks: [{
 				id: "36A9613C317523D0"
@@ -579,7 +549,7 @@
 				type: "item"
 			}]
 			title: "제작대를 손에 넣다"
-			x: -2.0d
+			x: 0.0d
 			y: 0.0d
 		}
 		{
@@ -590,6 +560,20 @@
 				"우선 &o날카롭잖아요!&r 그럼 &l강력하지 않겠습니까?&r &e사냥할 시간입니다! 검을 높이 드세요!&r"
 			]
 			id: "70FCF4F7B6EBCC36"
+			rewards: [
+				{
+					count: 5
+					id: "372201EBF577530F"
+					item: "kubejs:miner_coin"
+					type: "item"
+				}
+				{
+					count: 5
+					id: "60EB6F28A32B1159"
+					item: "kubejs:survivor_coin"
+					type: "item"
+				}
+			]
 			subtitle: "길을 막는 것은 모두 베어버리겠다"
 			tasks: [{
 				id: "0575E509E60644C4"
@@ -614,7 +598,7 @@
 				type: "item"
 			}]
 			title: "사냥할 시간이다!"
-			x: -0.5d
+			x: 1.5d
 			y: 2.0d
 		}
 		{
@@ -634,7 +618,7 @@
 					Count: 1
 					id: "ftbquests:custom_icon"
 					tag: {
-						Icon: "kubejs:textures/gui/good_sheep.png"
+						Icon: "minecraft:textures/mob_effect/regeneration.png"
 					}
 				}
 				id: "7B1E67FD5263CC1C"
@@ -656,12 +640,26 @@
 				type: "item"
 			}]
 			title: "싹둑싹둑"
-			x: 0.5d
+			x: 2.5d
 			y: 2.0d
 		}
 		{
 			dependencies: ["2BE8342EB862519A"]
 			id: "6A760A8045D5440C"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "4F1E2B6DBAD9334A"
+					table_id: 1284158969169144306L
+					type: "choice"
+				}
+				{
+					count: 5
+					id: "05CEAFC0A5C3804A"
+					item: "kubejs:technician_coin"
+					type: "item"
+				}
+			]
 			subtitle: "이케아는 가구에 늘 나사를 하나씩 더 넣어준다죠?"
 			tasks: [{
 				id: "00CDDC14D1087014"
@@ -682,7 +680,7 @@
 				type: "item"
 			}]
 			title: "가구 짓기 좋은 날"
-			x: 2.5d
+			x: 5.0d
 			y: 2.0d
 		}
 		{
@@ -693,11 +691,19 @@
 				"&c&l돌 도구는 못 만듭니다. 돌 도구로 업그레이드할 생각은 마세요.&r"
 			]
 			id: "423D449C5185D133"
-			rewards: [{
-				id: "70D0087EF30E2462"
-				item: "minecraft:flint"
-				type: "item"
-			}]
+			rewards: [
+				{
+					id: "70D0087EF30E2462"
+					item: "minecraft:flint"
+					type: "item"
+				}
+				{
+					count: 5
+					id: "7D3B1F30C7BA0812"
+					item: "kubejs:explorer_coin"
+					type: "item"
+				}
+			]
 			subtitle: "락 앤 스톤!"
 			tasks: [{
 				count: 64L
@@ -706,7 +712,7 @@
 				type: "item"
 			}]
 			title: "땅까지 파버리기"
-			x: 1.5d
+			x: 3.5d
 			y: 2.0d
 		}
 		{
@@ -760,21 +766,24 @@
 				""
 				"&b침대&r를 만들 시간입니다. 가서 침대를 만듭시다."
 			]
-			icon: {
-				Count: 1
-				id: "ftbquests:custom_icon"
-				tag: {
-					Icon: "ftbchunks:textures/faces/minecraft/sheep.png"
-				}
-			}
+			icon: "minecraft:sheep_spawn_egg"
 			id: "4C96166F478A46D8"
-			rewards: [{
-				count: 2
-				id: "12E362E56E2DA579"
-				item: "farmersdelight:cooked_mutton_chops"
-				title: "죄책감을 느끼세요"
-				type: "item"
-			}]
+			incompatible: ["2CE35B78DF8DB1AF"]
+			rewards: [
+				{
+					count: 2
+					id: "12E362E56E2DA579"
+					item: "farmersdelight:cooked_mutton_chops"
+					title: "죄책감을 느끼세요"
+					type: "item"
+				}
+				{
+					count: 5
+					id: "067BDB4ADEDEFF1C"
+					item: "kubejs:survivor_coin"
+					type: "item"
+				}
+			]
 			subtitle: "결국 저지르셨군요"
 			tasks: [
 				{
@@ -799,7 +808,7 @@
 				}
 			]
 			title: "양 6마리 잡기"
-			x: -0.5d
+			x: 1.5d
 			y: 4.0d
 		}
 		{
@@ -822,6 +831,24 @@
 			]
 			icon: "minecraft:white_bed"
 			id: "36424B1BB0DD6592"
+			rewards: [
+				{
+					id: "2BA8E453BB197677"
+					item: "farmersdelight:sweet_berry_cookie"
+					type: "item"
+				}
+				{
+					id: "6CF15D3F0E9ECC00"
+					item: "minecraft:oak_door"
+					type: "item"
+				}
+				{
+					count: 10
+					id: "32FFB189C781180F"
+					item: "kubejs:technician_coin"
+					type: "item"
+				}
+			]
 			subtitle: "피곤했는데 마침 잘 됐네"
 			tasks: [{
 				id: "2E7FD69BF2E7F97E"
@@ -836,12 +863,18 @@
 				type: "item"
 			}]
 			title: "아늑한 침대"
-			x: 2.5d
-			y: 5.0d
+			x: 6.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["423D449C5185D133"]
 			id: "41210750586F374C"
+			rewards: [{
+				count: 5
+				id: "1021F841665C9A3B"
+				item: "kubejs:technician_coin"
+				type: "item"
+			}]
 			subtitle: "으어ㅓㅓㅓㅓㅓ... 시원하다"
 			tasks: [{
 				id: "4C2F8C52F303BCD0"
@@ -849,8 +882,81 @@
 				type: "item"
 			}]
 			title: "뜨끈뜨끈하네!"
-			x: 1.5d
+			x: 3.5d
 			y: 3.0d
+		}
+		{
+			dependencies: [
+				"7D7E53FD92B00E76"
+				"181E99CC5F4A208B"
+			]
+			dependency_requirement: "one_completed"
+			description: [
+				"&c나무를 캘 수 없다는 사실을 알아버리셨군요!&r 하지만 괜찮습니다."
+				""
+				"&a제가 넓은 아량으로 배려해드리겠습니다!&r"
+				""
+				"&7부싯돌 3개&r만 만드세요. &7나무 2개&r를 드리겠습니다."
+				""
+				"&7부싯돌 1개&r도 덤으로 드립니다!"
+			]
+			id: "02FF9105416FC255"
+			rewards: [
+				{
+					count: 2
+					id: "38242CF6B251D05F"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					id: "2E13688DD7FBC210"
+					item: "minecraft:flint"
+					type: "item"
+				}
+			]
+			subtitle: "나무 줘!!!!! 나무!!!!!!!!"
+			tasks: [{
+				count: 3L
+				id: "5188DFD6884E378E"
+				item: { Count: 2, id: "minecraft:flint" }
+				type: "item"
+			}]
+			title: "나무를 캘 수 없다면..."
+			x: -2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["70FCF4F7B6EBCC36"]
+			description: [
+				"&2식량은 중요합니다!&r &a돼지 몇 마리 좀 잡아볼까요?&r"
+				""
+				"&7돼지고기&r로 만들 수 있는 &6요리&r는 다양합니다. &dE&aM&bI&r를 꼭 확인하세요!"
+			]
+			id: "69343013B8F119E7"
+			rewards: [
+				{
+					id: "7F2066AB858A78D7"
+					item: "minecraft:cooked_porkchop"
+					type: "item"
+				}
+				{
+					count: 5
+					id: "6F4FD7994BB9ED28"
+					item: "kubejs:survivor_coin"
+					type: "item"
+				}
+			]
+			subtitle: "자네 앞날이 창창한 젊은이가 왜 돼지를 죽이나"
+			tasks: [{
+				entity: "minecraft:pig"
+				icon: "minecraft:pig_spawn_egg"
+				id: "0951504BA20BB8B1"
+				type: "kill"
+				value: 5L
+			}]
+			title: "잘가게"
+			x: 0.5d
+			y: 4.0d
 		}
 	]
 	subtitle: ["여러분의 모험이 시작되는 첫 챕터입니다."]
