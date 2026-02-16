@@ -1,6 +1,6 @@
 Ponder.registry((event) => 
 {
-  event.create("gtceu:coke_oven").scene("coke_oven_guide_2", "코크스 오븐 가이드", "kubejs:coke_oven", (scene, util) => {
+  event.create(["gtceu:coke_oven", "gtceu:coke_oven_bricks", "gtceu:coke_oven_hatch"]).scene("coke_oven_guide_2", "코크스 오븐 가이드", "kubejs:coke_oven", (scene, util) => {
     scene.configureBasePlate(0, 0, 5);
     scene.showBasePlate();
   
@@ -111,6 +111,7 @@ Ponder.registry((event) =>
     scene.idle(60);
     scene.world.createItemEntity([2.5, 2.5, 0.9], util.vector.of(0, 0.3, -0.05), "gtceu:creosote_bucket");
     scene.idle(40);
+    scene.overlay.showOutline(PonderPalette.GREEN, [2, 1, 0], util.select.position(2, 1, 0), 80);
     scene.text(80, "...양동이에 담을 수 있습니다.", [3, 0.8, 1]).colored(PonderPalette.GREEN).placeNearTarget().attachKeyFrame();
     scene.idle(60);
     scene.markAsFinished();

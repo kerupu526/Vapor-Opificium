@@ -24,7 +24,8 @@ StartupEvents.registry("item", (event) => {
       .create(`${id}_coin`)
       .rarity("uncommon")
       .translationKey(`item.kubejs.${id}_coin`)
-      .tooltip(Text.translate("item.kubejs.coin.tooltip"));
+      .tooltip(Text.translate("item.kubejs.coin.tooltip"))
+      .tagItem("kubejs:coins");
 
     // 2. 만약 아이디가 'energy'라면 반짝임(Glow) 효과를 켠다
     if (id === "energy") {
@@ -35,5 +36,17 @@ StartupEvents.registry("item", (event) => {
   event
     .create("tanned_leather")
     .translationKey("item.kubejs.tanned_leather")
+    .maxStackSize(64)
+    .tagItem("forge:leather");
+    
+  event
+    .create("bound_leather")
+    .translationKey("item.kubejs.bound_leather")
     .maxStackSize(64);
+
+  event.create("portal_activator")
+    .translationKey("item.kubejs.portal_activator")
+    .maxStackSize(1)
+    .glow(true)
+    .rarity('rare');
 });

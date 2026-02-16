@@ -1,9 +1,12 @@
+const AABB = Java.loadClass('net.minecraft.world.phys.AABB');
+const Vec3 = Java.loadClass('net.minecraft.world.phys.Vec3');
+
 Ponder.registry((event) => 
 {
     const TICK_LENGTH = 20;
     const IDLE_TICK_LENGTH = TICK_LENGTH * 3;
 
-  event.create("gtceu:coke_oven").scene("coke_oven_guide_1", "코크스 오븐 건설", "kubejs:coke_oven", (scene, util) => {
+  event.create(["gtceu:coke_oven", "gtceu:coke_oven_bricks", "gtceu:coke_oven_hatch"]).scene("coke_oven_guide_1", "코크스 오븐 건설", "kubejs:coke_oven", (scene, util) => {
     scene.configureBasePlate(0, 0, 5);
     scene.showBasePlate();
   
@@ -38,11 +41,48 @@ Ponder.registry((event) =>
     scene.world.modifyBlock([1, 2, 2], (state) => state.with("facing", "west"), true);
     scene.overlay.showOutline(PonderPalette.WHITE, util.select.position(1, 2, 2), util.select.position(1, 2, 2), 60);
     scene.idle(80);
-    scene.overlay.showOutline(PonderPalette.GREEN, util.select.position(1, 3, 1), util.select.fromTo(1, 3, 1, 3, 1, 3), 60);
-    scene.text(80, "코크스 오븐이 준비되었습니다!", [2, 2.5, 1]).placeNearTarget();
+    // 함수 호출! 좌표는 [1, 1, 1, 4, 4, 4] 이렇게 넣어야 3x3x3이 딱 맞아♡
+    let center = centerAnimatedOutline(scene, PonderPalette.GREEN, [1, 1, 1, 4, 4, 4], 60);
+    scene.text(80, "코크스 오븐이 준비되었습니다!", center)
+      .colored(PonderPalette.GREEN)
+      .placeNearTarget()
+      .attachKeyFrame();
     scene.idle(60);
     scene.rotateCameraY(360);
     scene.idle(20);
     scene.markAsFinished();
     });
 });
+
+/**
+ * 상자가 중앙에서부터 펴지는 연출 (수학 계산 직접 함♡)
+ */
+function centerAnimatedOutline(scene, color, coords, duration) {
+    // 배열에서 좌표 꺼내기 (변수로 정리 좀 해, 보기 힘들잖아)
+    let minX = coords[0];
+    let minY = coords[1];
+    let minZ = coords[2];
+    let maxX = coords[3];
+    let maxY = coords[4];
+    let maxZ = coords[5];
+
+    // 1. 목표 상자 만들기
+    let endBB = new AABB(minX, minY, minZ, maxX, maxY, maxZ);
+    
+    // 2. 중앙 좌표 직접 계산하기 (더하고 나누기 2! 설마 이것도 몰라?)
+    // 자바 객체 호환성 때문에 오류 나니까, 그냥 JS에서 숫자로 계산하는 게 확실해.
+    let cX = (minX + maxX) / 2.0;
+    let cY = (minY + maxY) / 2.0;
+    let cZ = (minZ + maxZ) / 2.0;
+
+    // 3. 점 상자 만들기 (크기가 없는 상자)
+    // 위에서 구한 숫자를 그대로 넣으니까 절대 오류 안 나♡
+    let startBB = new AABB(cX, cY, cZ, cX, cY, cZ);
+
+    // 4. 애니메이션 실행
+    scene.overlay.chaseBoundingBoxOutline(color, endBB, startBB, 1);
+    scene.overlay.chaseBoundingBoxOutline(color, endBB, endBB, duration);
+
+    // 5. 텍스트 띄울 때 쓰라고 중앙 좌표(Vec3) 만들어서 던져줌
+    return new Vec3(cX, cY, cZ);
+}

@@ -61,6 +61,10 @@ ServerEvents.recipes(event => {
         }
     })
 
+    event.remove({ output: 'solapplepie:lunchbag' })
+    event.remove({ output: 'solapplepie:lunchbox' })
+    event.remove({ output: 'solapplepie:golden_lunchbox' })
+
     // 1. 가죽 도시락 (Lunchbag) - 원시 시대
     // 가죽 3개 + 실(String) -> 초반 인벤토리 압박 해소용
     event.shaped('kubejs:lunchbag', [
