@@ -70,9 +70,21 @@
 				}
 			}
 			id: "2026DA400367DE08"
+			rewards: [
+				{
+					id: "38E731DA74A8D882"
+					item: "kubejs:lunchbag"
+					type: "item"
+				}
+				{
+					id: "643461E0401823BF"
+					item: "solapplepie:food_book"
+					type: "item"
+				}
+			]
 			subtitle: "우왕 밥이다"
 			tasks: [{
-				id: "150A5F068BA9814B"
+				id: "6257B33AFCB63BB3"
 				title: "읽음"
 				type: "checkmark"
 			}]
@@ -124,9 +136,9 @@
 			id: "302ABBECC6938E6E"
 			subtitle: "뼛속까지 락 앤 스톤!"
 			tasks: [{
-				count: 128L
+				count: 25L
 				id: "4123B4A991F716C0"
-				item: { Count: 256, id: "minecraft:stone" }
+				item: "minecraft:stone"
 				type: "item"
 			}]
 			title: "돌을 캐자"
@@ -167,11 +179,26 @@
 				"0AC1F89864A10493"
 			]
 			description: [
-				"농사를 강가/호숫가에서만 해야한다니,"
+				"&c농사를 강가/호숫가에서만 해야한다는 것은 너무 귀찮습니다!&r"
 				""
-				"물을 옮길 수단을 고려해봐야합니다."
+				"&e물을 옮길 수단을 고려해봐야합니다.&r"
+				""
+				"&7철제 양동이&r를 쓰기엔 &c너무 비싸고&r, &6손으&f로 담&2기엔 &c마인크래프트에서는 그럴 수가 없습니다.&r"
+				""
+				"&3점토 가루&r를 뭉쳐서 &a굽지 않은 점토 양동이&r를 만드는 건 어떨까요?"
+				""
+				"&e절구&r로 &9점토 덩이&r를 빻으면 &7작은 점토 가루 더미&r가 나옵니다."
+				""
+				"&7작은 점토 가루 더미 4개&r를 뭉치면 &3점토 가루 하나&r가 나오니, &9점토 덩이 20개&r로 &a굽지 않은 점토 양동이&r를 만들 수 있겠네요!"
 			]
 			id: "3EF83909B88A1DE7"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "5A3D31FE2C11358D"
+				table_id: 7341935853310251997L
+				title: "무슨 쿠키?"
+				type: "choice"
+			}]
 			subtitle: "왜 이걸 진작에 생각 못했을까요?"
 			tasks: [{
 				id: "58DE567856A7C30A"
@@ -180,6 +207,47 @@
 			}]
 			title: "액체를 옮길 무언가"
 			x: -1.0d
+			y: 3.5d
+		}
+		{
+			id: "40E9CFB7C98C9E67"
+			tasks: [{
+				count: 128L
+				id: "515B32C0A5AECD43"
+				item: { Count: 128, id: "minecraft:gravel" }
+				type: "item"
+			}]
+			title: "자갈을 캐자"
+			x: 1.5d
+			y: -1.0d
+		}
+		{
+			dependencies: ["3EF83909B88A1DE7"]
+			description: ["여기서는 유한 물입니다."]
+			icon: "minecraft:cactus"
+			id: "14AD191D34E8F2C4"
+			rewards: [{
+				count: 3
+				id: "3540998DD2F33285"
+				item: "minecraft:cactus"
+				type: "item"
+			}]
+			subtitle: "또 이딴 쓰레기 같은 거"
+			tasks: [{
+				count: 10L
+				id: "2E524361A4D5C657"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "minecraft:logs"
+					}
+				}
+				title: "Any #minecraft:logs"
+				type: "item"
+			}]
+			title: "무한 물은 어디로"
+			x: -2.0d
 			y: 3.5d
 		}
 	]

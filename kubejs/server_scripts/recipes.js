@@ -32,7 +32,7 @@ ServerEvents.recipes(event => {
         ' F'
     ], {
         F: 'minecraft:flint'
-    })
+    }).id('kubejs:flint_shears')
 
     colors.forEach(color => {
         // [수정됨] 유저 제보 기반 ID: comforts:sleeping_bag_white
@@ -54,7 +54,7 @@ ServerEvents.recipes(event => {
                 W: woolId,
                 C: carpetId,
                 M: '#gtceu:tools/crafting_mallets' 
-            }).damageIngredient('#gtceu:tools/crafting_mallets' )
+            }).damageIngredient('#gtceu:tools/crafting_mallets' ).id(`kubejs:sleeping_bag_${color}`)
         } else {
             // 혹시라도 ID가 틀렸으면 로그에 뜸
             console.warn(`[Warning] 침낭 아이템을 찾을 수 없음: ${sleepingBagId}`)
@@ -75,7 +75,7 @@ ServerEvents.recipes(event => {
         S: 'minecraft:string',
         L: 'kubejs:tanned_leather',
         P: 'minecraft:paper'
-    })
+    }).id('kubejs:lunchbag')
 
     // 2. 청동 도시락통 (Lunchbox) - 스팀 시대 (Bronze Age)
     // 원래 철이었던 걸 청동(Bronze)으로 변경. 
@@ -88,7 +88,7 @@ ServerEvents.recipes(event => {
         R: '#forge:rods/bronze',       // 청동 막대
         P: '#forge:plates/bronze',     // 청동 판
         B: 'kubejs:lunchbag'           // 이전 티어 업그레이드
-    })
+    }).id('kubejs:lunchbox')
 
     // 3. 강철 도시락통 (Steel Lunchbox) - LV 시대
     // 청동 -> 강철 업그레이드
@@ -101,7 +101,7 @@ ServerEvents.recipes(event => {
         S: '#forge:screws/steel',       // 강철 나사
         P: '#forge:plates/steel',       // 강철 판
         B: 'kubejs:lunchbox'           // 이전 티어
-    })
+    }).id('kubejs:steel_lunchbox')
 
     event.remove({ output: 'sophisticatedbackpacks:feeding_upgrade' })
 
@@ -116,7 +116,7 @@ ServerEvents.recipes(event => {
         P: 'gtceu:polyethylene_plate',  // 플라스틱 판 (MV부터 나옴). 없으면 'gtceu:aluminium_plate'
         U: 'sophisticatedbackpacks:upgrade_base',
         B: 'kubejs:steel_lunchbox'     // [핵심] 도시락통을 칩으로 변환!
-    })
+    }).id('kubejs:feeding_upgrade')
 
     event.remove({ output: 'sophisticatedbackpacks:advanced_feeding_upgrade' })
 
@@ -131,7 +131,7 @@ ServerEvents.recipes(event => {
         S: 'gtceu:stainless_steel_plate', // 스테인리스 (위생)
         F: 'sophisticatedbackpacks:feeding_upgrade', // 하위 티어 업그레이드
         C: '#gtceu:circuits/hv'         // Advanced Integrated Circuit
-    })
+    }).id('kubejs:advanced_feeding_upgrade')
 
     
     // 가죽 도시락 비우기
@@ -140,4 +140,37 @@ ServerEvents.recipes(event => {
     event.shapeless('kubejs:lunchbox', ['kubejs:lunchbox']).id('kubejs:clear_lunchbox')
     // 황금 도시락 비우기
     event.shapeless('kubejs:steel_lunchbox', ['kubejs:steel_lunchbox']).id('kubejs:clear_steel_lunchbox')
+
+    event.remove({ output: 'ceramicbucket:unfired_clay_bucket' })
+    event.shaped('ceramicbucket:unfired_clay_bucket', [
+        'C C',
+        'CCC'
+    ], {
+        C: '#forge:dusts/clay'
+    }).id('kubejs:unfired_clay_bucket')
+
+    // 선인장 -> 선인장 수액
+    event.shapeless('kubejs:cactus_juice', ['minecraft:cactus']).id('kubejs:cactus_juice')
+    
+    // 선인장 수액 -> 물 양동이
+    event.shaped('minecraft:water_bucket', [
+        'CCC',
+        'CBC',
+        'CCC'
+    ],
+    {
+        C: 'kubejs:cactus_juice',
+        B: 'minecraft:bucket'
+    }).id('kubejs:cactus_juice_to_bucket')
+
+    // 선인장 수액 -> 세라믹 물 양동이
+    event.shaped(Item.of('ceramicbucket:ceramic_bucket', '{Fluid:{Amount:1000,FluidName:"minecraft:water"}}').strongNBT(), [
+        'CCC',
+        'CBC',
+        'CCC'
+    ],
+    {
+        C: 'kubejs:cactus_juice',
+        B: 'ceramicbucket:ceramic_bucket'
+    }).id('kubejs:cactus_juice_to_ceramic_bucket')
 })

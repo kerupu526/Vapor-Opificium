@@ -1,0 +1,22 @@
+{
+	icon: "minecraft:cookie"
+	id: "65E3CBC2644313DD"
+	loot_size: 1
+	order_index: 2
+	rewards: [
+		{ item: "minecraft:cookie" }
+		{ item: "farmersdelight:sweet_berry_cookie" }
+		{ item: "farmersdelight:honey_cookie" }
+		{ item: "twilightdelight:torchberry_cookie" }
+		{ item: "farmersrespite:green_tea_cookie" }
+		{ item: "fruitsdelight:persimmon_cookie" }
+		{ item: "fruitsdelight:lemon_cookie" }
+		{ item: "fruitsdelight:cranberry_cookie" }
+		{ item: "fruitsdelight:bayberry_cookie" }
+		{ item: "rusticdelight:syrup_cookie" }
+		{ item: "rusticdelight:cherry_blossom_cookie" }
+		{ item: "rusticdelight:coffee_cookie" }
+		{ item: "endersdelight:uncanny_cookies" }
+	]
+	title: "무슨 쿠키?"
+}

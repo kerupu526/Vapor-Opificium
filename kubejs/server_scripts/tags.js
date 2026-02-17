@@ -1,6 +1,6 @@
 ServerEvents.tags('item', event => {
-    event.remove('twilightforest:portal/activator', 'minecraft:diamond');
-    event.add('twilightforest:portal/activator', 'avaritia:infinity_catalyst');
+    event.removeAll('twilightforest:portal/activator');
+    event.add('twilightforest:portal/activator', 'kubejs:portal_activator');
 
     event.add('kubejs:coins', [
         'kubejs:survivor_coin',

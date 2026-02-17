@@ -1,0 +1,17 @@
+filename = 'AE2 Backport Integration.zip'
+name = 'Perfect AE2 Resource Backport'
+side = 'client'
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [ '1.20', '1.20', '1.20.1', '1.20.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = 'ae2-integration-2.2.2'
+
+[download]
+hash = '0144e42e641c55a4468251919b9be8de31d5ae7feef58d19a11d4c8e10f3deaee52ad41756e6ea3d15fcc9a4d2a445ca95e52365ad2cae074cb97403594977da'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/2nz47oli/versions/hN0qKOPu/AE2 Backport Integration.zip'
+
+[update.modrinth]
+mod-id = '2nz47oli'
+version = 'hN0qKOPu'

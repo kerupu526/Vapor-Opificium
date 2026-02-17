@@ -15,8 +15,14 @@
   "item.kubejs.steel_lunchbox": "Steel Lunchbox",
 
   "item.kubejs.tanned_leather": "Tanned Leather",
-
-  "item.kubejs.coin.tooltip": "§7Can be exchanged for items in the Quest Shop.",
+  "item.kubejs.bound_leather": "Bound Leather",
+  
+  "item.kubejs.portal_activator": "Portal Activator",
+  
+  "item.kubejs.cactus_juice": "Cactus Juice",
+  
+  "tooltip.kubejs.cactus_juice": "Refreshing!",
+  "tooltip.kubejs.coin": "§7Can be exchanged for items in the Quest Shop.",
   
   "notification.kubejs.tree_fail.title": "⚠ Unable to Mine ⚠",
   "notification.kubejs.tree_fail.desc_1": "This tree is too hard.",
