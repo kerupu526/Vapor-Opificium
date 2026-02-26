@@ -173,4 +173,52 @@ ServerEvents.recipes(event => {
         C: 'kubejs:cactus_juice',
         B: 'ceramicbucket:ceramic_bucket'
     }).id('kubejs:cactus_juice_to_ceramic_bucket')
+
+    // 가죽 -> 묶인 가죽
+    event.shaped(Item.of('kubejs:bound_leather'), 
+    [
+        'SLS',
+        'LCL',
+        'SLS'
+    ],
+    {
+        S: 'minecraft:string',
+        L: 'minecraft:leather',
+        C: 'farmersdelight:canvas'
+    }).id('kubejs:binding_leather')
+
+    event.recipes.vapor_utils.drying('kubejs:bound_leather', 'kubejs:tanned_leather').ticks(6000).id('kubejs:tanning_leather');
+
+    event.remove({ output: 'minecraft:paper'});
+
+    event.shapeless(Item.of('gtceu:wood_dust'),
+    [
+        '#minecraft:logs',
+        '#forge:tools/mortars'
+    ]).id('kubejs:pulp_from_logs');
+
+    event.custom({
+        type: 'minecraft:crafting_shaped',
+        pattern:[
+            'PPP',
+            'PWP',
+            'PPP'
+        ],
+        key: {
+            P: {item: 'gtceu:wood_dust'},
+            W: {
+                type: 'bucketlib:fluid',
+                fluid: 'minecraft:water'
+            }
+        },
+        result: {item: 'minecraft:paper', count: 2}
+    }).id('kubejs:paper_from_wood_pulp_and_water');
+
+    event.remove({ output: 'gtceu:empty_wooden_form' })
+
+    event.shapeless('gtceu:empty_wooden_form',
+    [
+        'tconstruct:pattern',
+        '#forge:tools/saws'
+    ]).id('kubejs:wooden_shape_from_pattern');
 })

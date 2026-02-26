@@ -59,7 +59,7 @@
 			}]
 			title: "빻아버리기"
 			x: -2.0d
-			y: 2.0d
+			y: 1.5d
 		}
 		{
 			icon: {
@@ -82,13 +82,13 @@
 					type: "item"
 				}
 			]
-			subtitle: "우왕 밥이다"
+			subtitle: "식사도 제공하고 일도 얼마 없다니, 꿈의 직장이네요"
 			tasks: [{
 				id: "6257B33AFCB63BB3"
 				title: "읽음"
 				type: "checkmark"
 			}]
-			title: "준비하시고... 쏘세요!"
+			title: "노동할 시간이다!"
 			x: 0.0d
 			y: 0.0d
 		}
@@ -121,7 +121,7 @@
 			id: "2B4787DC8FB5ACC8"
 			optional: true
 			shape: "rsquare"
-			subtitle: "이거만큼 편한 게 없는데 아직도 &2JEI&r를 고집하시나요?"
+			subtitle: "아직도 &2JEI&r를 고집하시나요?"
 			tasks: [{
 				id: "30D7784B07D2E948"
 				title: "확인"
@@ -164,14 +164,14 @@
 			id: "0AC1F89864A10493"
 			subtitle: "아O클레이가 아닙니다!"
 			tasks: [{
-				count: 128L
+				count: 140L
 				id: "7B40A25FE880B916"
-				item: { Count: 256, id: "minecraft:clay_ball" }
+				item: "minecraft:clay_ball"
 				type: "item"
 			}]
 			title: "점토를 캐자"
 			x: 0.0d
-			y: 2.0d
+			y: 1.5d
 		}
 		{
 			dependencies: [
@@ -190,6 +190,8 @@
 				"&e절구&r로 &9점토 덩이&r를 빻으면 &7작은 점토 가루 더미&r가 나옵니다."
 				""
 				"&7작은 점토 가루 더미 4개&r를 뭉치면 &3점토 가루 하나&r가 나오니, &9점토 덩이 20개&r로 &a굽지 않은 점토 양동이&r를 만들 수 있겠네요!"
+				""
+				"자! 빨리 움직이세요! 점토를 캐고 양동이를 만들 시간입니다!"
 			]
 			id: "3EF83909B88A1DE7"
 			rewards: [{
@@ -200,17 +202,26 @@
 				type: "choice"
 			}]
 			subtitle: "왜 이걸 진작에 생각 못했을까요?"
-			tasks: [{
-				id: "58DE567856A7C30A"
-				item: "ceramicbucket:unfired_clay_bucket"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "58DE567856A7C30A"
+					item: "ceramicbucket:unfired_clay_bucket"
+					type: "item"
+				}
+				{
+					id: "578E14F7B392BAAF"
+					item: "ceramicbucket:ceramic_bucket"
+					type: "item"
+				}
+			]
 			title: "액체를 옮길 무언가"
 			x: -1.0d
-			y: 3.5d
+			y: 2.5d
 		}
 		{
+			dependencies: ["2026DA400367DE08"]
 			id: "40E9CFB7C98C9E67"
+			subtitle: "쌰@갈"
 			tasks: [{
 				count: 128L
 				id: "515B32C0A5AECD43"
@@ -223,7 +234,15 @@
 		}
 		{
 			dependencies: ["3EF83909B88A1DE7"]
-			description: ["여기서는 유한 물입니다."]
+			description: [
+				"네? 물이 왜 무한이 아니냐고요?"
+				""
+				"잊으셨나요? 여기는 Vapor Opificium입니다. 제작자가 무한 물 같은 걸 챙겨줄 리 없죠!"
+				""
+				"잠시만요, 기막힌 아이디어가 떠올랐습니다. "
+				""
+				"선인장 수액을 먹을 수 있다면, 선인장으로 물을 만들 수 있지 않을까요?"
+			]
 			icon: "minecraft:cactus"
 			id: "14AD191D34E8F2C4"
 			rewards: [{
@@ -232,7 +251,7 @@
 				item: "minecraft:cactus"
 				type: "item"
 			}]
-			subtitle: "또 이딴 쓰레기 같은 거"
+			subtitle: "이러시는 이유가 있으실 거 아니에요"
 			tasks: [{
 				count: 10L
 				id: "2E524361A4D5C657"
@@ -248,7 +267,190 @@
 			}]
 			title: "무한 물은 어디로"
 			x: -2.0d
+			y: 2.5d
+		}
+		{
+			dependencies: [
+				"10C85EA2E5195CA2"
+				"469AD07E826A946B"
+			]
+			icon: "gtceu:coke_oven"
+			id: "135C2766537ADA23"
+			subtitle: "환경 오염이 우려되네요"
+			tasks: [
+				{
+					count: 104L
+					id: "1EEACF4831C7C756"
+					item: { Count: 104, id: "gtceu:compressed_coke_clay" }
+					type: "item"
+				}
+				{
+					count: 104L
+					id: "5B82A5844CAF71C8"
+					item: { Count: 104, id: "gtceu:coke_oven_brick" }
+					type: "item"
+				}
+			]
+			title: "나무 태우기"
+			x: 2.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["3EF83909B88A1DE7"]
+			icon: "minecraft:paper"
+			id: "5A22A9DC85D41874"
+			rewards: [
+				{
+					id: "2901DCC196D3D183"
+					item: "tconstruct:pattern"
+					type: "item"
+				}
+				{
+					count: 10
+					id: "2B2385A5AC311CB9"
+					item: "kubejs:technician_coin"
+					type: "item"
+				}
+			]
+			subtitle: "사탕수수가 존재할 가치가 사라졌군요"
+			tasks: [
+				{
+					count: 64L
+					id: "441F0F0B0B53D88E"
+					item: { Count: 64, id: "gtceu:wood_dust" }
+					type: "item"
+				}
+				{
+					count: 16L
+					id: "1F6DF7C7B5F63836"
+					item: { Count: 8, id: "minecraft:paper" }
+					type: "item"
+				}
+			]
+			title: "책벌레가 되기 위해"
+			x: -1.0d
 			y: 3.5d
+		}
+		{
+			dependencies: ["2026DA400367DE08"]
+			id: "25D8E0C40610BC77"
+			subtitle: "미식이네요"
+			tasks: [{
+				id: "5331CB3594F32E4D"
+				item: "solapplepie:food_book"
+				type: "item"
+			}]
+			title: "식사 일지 - 개정판"
+			x: -1.5d
+			y: -1.0d
+		}
+		{
+			dependencies: ["5A22A9DC85D41874"]
+			icon: "tconstruct:tinker_station"
+			id: "6CB4F390FF5726D9"
+			subtitle: "나만의 도구 만들기 프로젝트"
+			tasks: [
+				{
+					id: "385C47923ED17302"
+					item: "tconstruct:tinker_station"
+					type: "item"
+				}
+				{
+					id: "7D5D05834C2AABF2"
+					item: "tconstruct:part_builder"
+					type: "item"
+				}
+				{
+					id: "302D4F2F58A941B9"
+					item: "tconstruct:part_chest"
+					type: "item"
+				}
+			]
+			title: "땜질할 시간이다!"
+			x: -1.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["6CB4F390FF5726D9"]
+			id: "7AD66E028AF145E4"
+			tasks: [{
+				id: "5672CE451533A28F"
+				item: {
+					Count: 1
+					id: "tconstruct:longbow"
+					tag: {
+						Damage: 0
+						tic_broken: 0b
+						tic_materials: [
+							"tconstruct:wood"
+							"tconstruct:wood"
+							"tconstruct:wood"
+							"tconstruct:string"
+						]
+						tic_modifiers: [
+							{
+								level: 3
+								name: "tconstruct:cultivated"
+							}
+							{
+								level: 1
+								name: "tconstruct:stringy"
+							}
+						]
+						tic_multipliers: {
+							"tconstruct:durability": 1.5f
+						}
+						tic_persistent: { }
+						tic_stats: {
+							"tconstruct:durability": 360.0f
+						}
+						tic_volatile_data: {
+							abilities: 1
+							upgrades: 2
+						}
+					}
+				}
+				type: "item"
+			}]
+			title: "당신의 첫 활!"
+			x: 0.0d
+			y: 3.5d
+		}
+		{
+			dependencies: ["6CB4F390FF5726D9"]
+			icon: "gtceu:brick_wooden_form"
+			id: "469AD07E826A946B"
+			subtitle: "성형 수술을 집도하겠습니다"
+			tasks: [
+				{
+					id: "4DBC339B1FBB03E7"
+					item: {
+						Count: 1
+						id: "gtceu:flint_knife"
+						tag: {
+							Damage: 0
+							DisallowContainerItem: 0b
+							GT.Behaviours: { }
+							GT.Tool: {
+								AttackDamage: 1.0f
+								AttackSpeed: 3.0f
+								DefaultEnchantments: [ ]
+								MaxDamage: 63
+							}
+							HideFlags: 2
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "28B50B159336BE41"
+					item: "gtceu:brick_wooden_form"
+					type: "item"
+				}
+			]
+			title: "성형 도구 v0.1"
+			x: 0.0d
+			y: 5.0d
 		}
 	]
 	subtitle: ["&bGregTech™&r를 배우기 시작하는 챕터입니다."]
