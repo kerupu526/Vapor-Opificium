@@ -193,6 +193,7 @@
 				""
 				"자! 빨리 움직이세요! 점토를 캐고 양동이를 만들 시간입니다!"
 			]
+			icon: "ceramicbucket:unfired_clay_bucket"
 			id: "3EF83909B88A1DE7"
 			rewards: [{
 				exclude_from_claim_all: true
@@ -288,6 +289,17 @@
 					count: 104L
 					id: "5B82A5844CAF71C8"
 					item: { Count: 104, id: "gtceu:coke_oven_brick" }
+					type: "item"
+				}
+				{
+					count: 25L
+					id: "21D3A5DFC069E8C8"
+					item: { Count: 25, id: "gtceu:coke_oven_bricks" }
+					type: "item"
+				}
+				{
+					id: "63A81046BD893842"
+					item: "gtceu:coke_oven"
 					type: "item"
 				}
 			]
